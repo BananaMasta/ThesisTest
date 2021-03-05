@@ -12,7 +12,7 @@ create table THESISTEST_CUSTOMER (
     NAME varchar(100) not null,
     TELEPHONENUMBER varchar(255) not null,
     EMAIL varchar(50) not null,
-    USER_ID uuid,
+    USERS_ID uuid,
     --
     primary key (ID)
 )^

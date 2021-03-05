@@ -11,5 +11,10 @@
     </view>
     <view class="com.company.thesistest.entity.Customer"
           extends="_local"
-          name="customer-view"/>
+          name="customer-view">
+        <property name="users"
+                  view="_minimal">
+            <property name="active"/>
+        </property>
+    </view>
 </views>
