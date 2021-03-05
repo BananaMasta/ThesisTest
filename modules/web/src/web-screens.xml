@@ -9,4 +9,6 @@
             template="com/company/thesistest/web/order/order-browse.xml"/>
     <screen id="thesistest$Order.edit"
             template="com/company/thesistest/web/order/order-edit.xml"/>
+    <screen id="mainWindow"
+            template="com/company/thesistest/web/mainwindow/ext-main-window.xml"/>
 </screen-config>

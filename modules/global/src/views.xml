@@ -9,4 +9,7 @@
         <property name="date"/>
         <property name="amount"/>
     </view>
+    <view class="com.company.thesistest.entity.Customer"
+          extends="_local"
+          name="customer-view"/>
 </views>

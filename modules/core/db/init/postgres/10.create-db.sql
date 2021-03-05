@@ -10,7 +10,9 @@ create table THESISTEST_CUSTOMER (
     DELETED_BY varchar(50),
     --
     NAME varchar(100) not null,
+    TELEPHONENUMBER varchar(255) not null,
     EMAIL varchar(50) not null,
+    USER_ID uuid,
     --
     primary key (ID)
 )^
