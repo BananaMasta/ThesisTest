@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        class="com.company.thesistest.web.mainwindow.ExtMainWindow"
+        extends="/com/haulmont/thesis/web/app/mainwindow/mainwindow.xml"
+        xmlns:main="http://schemas.haulmont.com/cuba/mainwindow.xsd">
+    <layout>
+        <split id="foldersSplit">
+            <main:workArea id="workArea">
+                <main:initialLayout id="mainLayout">
+                    <split id="notificationSplit"
+                           height="100%">
+                        <vbox id="mainVbox">
+                            <embedded id="embedded"
+                                      height="AUTO"/>
+                            <vbox id="headerVBox">
+                                <hbox id="headerHBox">
+                                    <vbox id="buttonsVbox"
+                                          margin="true,false,false,false">
+                                        <flowBox id="buttonsLayout"
+                                                 margin="true,false,false,false"/>
+                                    </vbox>
+                                </hbox>
+                            </vbox>
+                        </vbox>
+                    </split>
+                </main:initialLayout>
+            </main:workArea>
+        </split>
+    </layout>
+</window>

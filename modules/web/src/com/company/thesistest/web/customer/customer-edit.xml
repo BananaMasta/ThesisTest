@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editCaption"
+        class="com.company.thesistest.web.customer.CustomerEdit"
+        datasource="customerDs"
+        messagesPack="com.company.thesistest.web.customer">
+    <dsContext>
+        <datasource id="customerDs"
+                    class="com.company.thesistest.entity.Customer"
+                    view="customer-view"/>
+        <collectionDatasource id="usersDs"
+                              class="com.haulmont.cuba.security.entity.User"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from sec$User e where e.active = true]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <layout expand="windowActions"
+            spacing="true">
+        <grid spacing="true">
+            <columns>
+                <column flex="1.0"/>
+                <column flex="1.0"/>
+                <column flex="1.0"/>
+                <column flex="1.0"/>
+            </columns>
+            <rows>
+                <row>
+                    <label value="msg://name"/>
+                    <textField id="customer"
+                               datasource="customerDs"
+                               property="name"/>
+                </row>
+                <row>
+                    <label value="msg://email"/>
+                    <textField id="email"
+                               datasource="customerDs"
+                               property="email"/>
+                </row>
+                <row>
+                    <label value="msg://telephonenumber"/>
+                    <textField id="telephonenumber"
+                               datasource="customerDs"
+                               property="telephonenumber"/>
+                </row>
+                <row>
+                    <label value="msg://checkUser"/>
+                    <checkBox id="isUser"
+                              description="msg://is User"/>
+                </row>
+                <row>
+                    <label id="userLabel"
+                           value="msg://users"
+                           />
+                    <lookupPickerField id="users"
+                                       datasource="customerDs"
+                                       optionsDatasource="usersDs"
+                                       property="users"
+                                       />
+                </row>
+            </rows>
+        </grid>
+        <iframe id="windowActions"
+                screen="editWindowActions"/>
+    </layout>
+</window>
