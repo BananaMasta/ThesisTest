@@ -3,7 +3,7 @@
     <view class="com.company.thesistest.entity.Order"
           name="orderWithCustomers">
         <property name="customer"
-                  view="_minimal">
+                  view="_local">
             <property name="email"/>
         </property>
         <property name="date"/>
@@ -16,5 +16,23 @@
                   view="_minimal">
             <property name="active"/>
         </property>
+    </view>
+    <view class="com.company.thesistest.entity.ExtContract"
+          extends="browse"
+          name="browse"
+          overwrite="true">
+        <property name="customer"
+                  view="_local"/>
+        <property name="order"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.thesistest.entity.ExtContract"
+          extends="edit"
+          name="edit"
+          overwrite="true">
+        <property name="customer"
+                  view="_local"/>
+        <property name="order"
+                  view="_minimal"/>
     </view>
 </views>

@@ -35,3 +35,8 @@ create table THESISTEST_ORDER (
     primary key (ID)
 )^
 -- end THESISTEST_ORDER
+-- begin DF_CONTRACT
+alter table DF_CONTRACT add column CUSTOMER_ID uuid ^
+alter table DF_CONTRACT add column ORDER_ID uuid ^^-- end DF_CONTRACT
+--Modify Discriminator for df$Contract
+update WF_CARD set CARD_TYPE = 1120 where CARD_TYPE = 120^

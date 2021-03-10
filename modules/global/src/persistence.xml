@@ -10,6 +10,7 @@
                       transaction-type="RESOURCE_LOCAL">
         <class>com.company.thesistest.entity.Customer</class>
         <class>com.company.thesistest.entity.Order</class>
+        <class>com.company.thesistest.entity.ExtContract</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
     </persistence-unit>
 </persistence>

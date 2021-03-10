@@ -3,16 +3,14 @@
  */
 package com.company.thesistest.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
+import com.haulmont.chile.core.annotations.MetaProperty;
+import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
 /**
@@ -20,7 +18,19 @@ import com.haulmont.cuba.core.entity.StandardEntity;
  */
 @Table(name = "THESISTEST_ORDER")
 @Entity(name = "thesistest$Order")
+@NamePattern("%s |customerName")
+
+
 public class Order extends StandardEntity {
+
+
+
+    @MetaProperty(related = "customer,date")
+    public String getCustomerName() {
+        SimpleDateFormat format =new SimpleDateFormat("dd.MM.yyyy");
+        return customer.getName() + "-" + format.format(getDate());
+    }
+
     private static final long serialVersionUID = -4980795942803290991L;
 
     @ManyToOne(fetch = FetchType.LAZY)

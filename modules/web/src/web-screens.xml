@@ -11,4 +11,8 @@
             template="com/company/thesistest/web/order/order-edit.xml"/>
     <screen id="mainWindow"
             template="com/company/thesistest/web/mainwindow/ext-main-window.xml"/>
+    <screen id="df$Contract.browse"
+            template="com/company/thesistest/web/ui/contract/ext-contract-browse.xml"/>
+    <screen id="df$Contract.edit"
+            template="com/company/thesistest/web/ui/contract/ext-contract-edit.xml"/>
 </screen-config>
