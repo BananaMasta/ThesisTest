@@ -11,6 +11,10 @@
         <class>com.company.thesistest.entity.Customer</class>
         <class>com.company.thesistest.entity.Order</class>
         <class>com.company.thesistest.entity.ExtContract</class>
+        <class>com.company.thesistest.entity.ExtEmployee</class>
+        <class>com.company.thesistest.entity.Categories</class>
+        <class>com.company.thesistest.entity.ExtSimpleDoc</class>
+        <class>com.company.thesistest.entity.Signers</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
     </persistence-unit>
 </persistence>

@@ -35,4 +35,50 @@
         <property name="order"
                   view="_minimal"/>
     </view>
+    <view class="com.company.thesistest.entity.ExtEmployee"
+          extends="browse"
+          name="browse"
+          overwrite="true">
+        <property name="signerCategory"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.thesistest.entity.ExtEmployee"
+          extends="edit"
+          name="edit"
+          overwrite="true">
+        <property name="signerCategory"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.thesistest.entity.Categories"
+          extends="_local"
+          name="categories-browse"/>
+    <view class="com.company.thesistest.entity.Categories"
+          extends="_local"
+          name="categories-edit"/>
+    <view class="com.company.thesistest.entity.ExtSimpleDoc"
+          extends="browse"
+          name="browse"
+          overwrite="true">
+        <property name="docCard"
+                  view="_local"/>
+    </view>
+    <view class="com.company.thesistest.entity.ExtSimpleDoc"
+          extends="edit"
+          name="edit"
+          overwrite="true">
+        <property name="docCard"
+                  view="_local"/>
+    </view>
+    <view class="com.company.thesistest.entity.Signers"
+          extends="_local"
+          name="signers-browse">
+        <property name="name"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.thesistest.entity.Signers"
+          extends="_local"
+          name="signers-edit">
+        <property name="name"
+                  view="_minimal"/>
+    </view>
 </views>

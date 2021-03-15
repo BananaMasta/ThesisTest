@@ -3,4 +3,8 @@
     <entity metaClass="thesistest$Customer"/>
     <entity metaClass="thesistest$Order"/>
     <entity metaClass="thesistest$Contract"/>
+    <entity metaClass="thesistest$Employee"/>
+    <entity metaClass="thesistest$Categories"/>
+    <entity metaClass="thesistest$SimpleDoc"/>
+    <entity metaClass="thesistest$Signers"/>
 </entities>

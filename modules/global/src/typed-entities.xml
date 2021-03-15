@@ -6,4 +6,5 @@
   -->
 <entities xmlns="http://schemas.haulmont.com/thesis/typed-entities.xsd">
     <entity metaClass="thesistest$Contract"/>
+    <entity metaClass="thesistest$SimpleDoc"/>
 </entities>

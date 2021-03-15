@@ -7,5 +7,11 @@
         <entity class="com.company.thesistest.entity.Order">
             <include re=".*"/>
         </entity>
+        <entity class="com.company.thesistest.entity.Categories">
+            <include re=".*"/>
+        </entity>
+        <entity class="com.company.thesistest.entity.Signers">
+            <include re=".*"/>
+        </entity>
     </entities>
 </fts-config>

@@ -5,4 +5,8 @@
         <item id="thesistest$Customer.browse"/>
         <item id="thesistest$Order.browse"/>
     </menu>
+    <item id="thesistest$Categories.lookup"
+          insertAfter="wf$AttachTypes.browse"/>
+    <item id="thesistest$Signers.lookup"
+          insertAfter="df$Position.browse"/>
 </menu-config>

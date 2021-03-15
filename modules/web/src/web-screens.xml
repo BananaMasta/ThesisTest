@@ -15,4 +15,24 @@
             template="com/company/thesistest/web/ui/contract/ext-contract-browse.xml"/>
     <screen id="df$Contract.edit"
             template="com/company/thesistest/web/ui/contract/ext-contract-edit.xml"/>
+    <screen id="df$Employee.browse"
+            template="com/company/thesistest/web/ui/employee/ext-employee-browse.xml"/>
+    <screen id="df$Employee.edit"
+            template="com/company/thesistest/web/ui/employee/ext-employee-edit.xml"/>
+    <screen id="thesistest$Categories.edit"
+            template="com/company/thesistest/web/categories/categories-edit.xml"/>
+    <screen id="thesistest$Categories.lookup"
+            template="com/company/thesistest/web/categories/categories-browse.xml"/>
+    <screen id="thesistest$Categories.browse"
+            template="com/company/thesistest/web/categories/categories-browse.xml"/>
+    <screen id="df$SimpleDoc.browse"
+            template="com/company/thesistest/web/ui/simpledoc/ext-simple-doc-browse.xml"/>
+    <screen id="df$SimpleDoc.edit"
+            template="com/company/thesistest/web/ui/simpledoc/ext-simple-doc-edit.xml"/>
+    <screen id="thesistest$Signers.edit"
+            template="com/company/thesistest/web/signers/signers-edit.xml"/>
+    <screen id="thesistest$Signers.lookup"
+            template="com/company/thesistest/web/signers/signers-browse.xml"/>
+    <screen id="thesistest$Signers.browse"
+            template="com/company/thesistest/web/signers/signers-browse.xml"/>
 </screen-config>
