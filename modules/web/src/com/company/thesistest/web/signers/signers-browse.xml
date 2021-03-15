@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.thesistest.web.signers.SignersBrowse"
+        lookupComponent="signersTable"
+        messagesPack="com.company.thesistest.web.signers">
+    <dsContext>
+        <collectionDatasource id="signersDs"
+                              class="com.company.thesistest.entity.Signers"
+                              view="signers-browse">
+            <query>
+                <![CDATA[select e from thesistest$Signers e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <layout expand="signersTable"
+            spacing="true">
+        <filter id="genericFilter"
+                applyTo="signersTable"
+                datasource="signersDs"
+                stylename="edit-area">
+            <properties include=".*"/>
+        </filter>
+        <table id="signersTable"
+               multiselect="true"
+               presentations="true"
+               width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="employee"/>
+            </columns>
+            <rows datasource="signersDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="signersTable.create"/>
+                <button id="editBtn"
+                        action="signersTable.edit"/>
+                <button id="removeBtn"
+                        action="signersTable.remove"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

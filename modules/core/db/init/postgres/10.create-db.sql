@@ -61,9 +61,6 @@ create table THESISTEST_CATEGORIES (
     --
     primary key (ID)
 )^
-INSERT INTO thesistest_categories
-(id, code,name)
-values(uuid_generate_v1(),'01', 'Нормативные и раcпорядительные документы Банка России'),(uuid_generate_v1(),'07', 'Переписка Банка с министерствами,ведомтсвами,предприятиями, учреждениями, клиентами и др'),(uuid_generate_v1(),'08', 'Переписка Банка с Банком России'), (uuid_generate_v1(),'09', 'Переписка Банка с налоговыми органами РФ')
 -- end THESISTEST_CATEGORIES
 -- begin DF_SIMPLE_DOC
 alter table DF_SIMPLE_DOC add column DOC_CARD_ID uuid ^

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        class="com.company.thesistest.web.ui.contract.ExtContractEditor"
+        extends="com/haulmont/thesis/web/ui/contract/contract-edit.xml"
+        messagesPack="com.company.thesistest.web.ui.contract">
+    <dsContext>
+        <datasource id="cardDs"
+                    class="com.company.thesistest.entity.ExtContract"/>
+        <collectionDatasource id="customersDs"
+                              class="com.company.thesistest.entity.Customer"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from thesistest$Customer e]]>
+            </query>
+        </collectionDatasource>
+        <collectionDatasource id="ordersDs"
+                              class="com.company.thesistest.entity.Order"
+                              view="orderWithCustomers">
+            <query>
+                <![CDATA[select e from thesistest$Order e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <layout>
+        <split id="split">
+            <hbox id="mainPane">
+                <tabSheet id="tabsheet">
+                    <tab id="mainTab">
+                        <groupBox id="docInfoGroupBox">
+                            <scrollBox id="infoScrollBox"
+                                       height="100%">
+                                <vbox id="infoVBox">
+                                    <grid id="docInfo">
+                                        <rows>
+                                            <row>
+                                                <label id="customerLabel"
+                                                       value="msg://com.company.thesistest.entity/ExtContract.customer"/>
+                                                <lookupPickerField id="customer"
+                                                                   datasource="cardDs"
+                                                                   optionsDatasource="customersDs"
+                                                                   property="customer"
+                                                                   width="250px"/>
+                                            </row>
+                                            <row/>
+                                            <row>
+                                                <label id="orderLabel"
+                                                       value="msg://com.company.thesistest.entity/ExtContract.order"/>
+                                                <lookupPickerField id="order"
+                                                                   datasource="cardDs"
+                                                                   optionsDatasource="ordersDs"
+                                                                   property="order"
+                                                                   width="250px"/>
+                                            </row>
+                                        </rows>
+                                    </grid>
+                                    <vbox>
+                                        <scrollBox height="100px"/>
+                                    </vbox>
+                                </vbox>
+                            </scrollBox>
+                        </groupBox>
+                    </tab>
+                    <tab id="versionsTab">
+                        <table id="versionsTable">
+                            <columns>
+                                <column id="order"/>
+                            </columns>
+                        </table>
+                    </tab>
+                </tabSheet>
+            </hbox>
+        </split>
+    </layout>
+</window>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editCaption"
+        class="com.company.thesistest.web.signers.SignersEdit"
+        datasource="signersDs"
+        messagesPack="com.company.thesistest.web.signers">
+    <dsContext>
+        <datasource id="signersDs"
+                    class="com.company.thesistest.entity.Signers"
+                    view="signers-edit"/>
+    </dsContext>
+    <layout expand="tabsheet"
+            height="100%"
+            spacing="true"
+            width="100%">
+        <tabSheet id="tabsheet">
+            <tab id="mainTab"
+                 caption="msg://mainTab"
+                 margin="true">
+                <scrollBox id="scrollBox56"
+                           height="100%">
+                    <fieldGroup id="fieldGroup"
+                                datasource="signersDs">
+                        <column width="250px">
+                            <field id="employee"/>
+                        </column>
+                    </fieldGroup>
+                </scrollBox>
+            </tab>
+        </tabSheet>
+        <iframe id="windowActions"
+                screen="editWindowActions"/>
+    </layout>
+</window>

@@ -1,0 +1,2 @@
+alter table DF_CONTRACT add constraint FK_DF_CONTRACT_CUSTOMER_ID foreign key (CUSTOMER_ID) references THESISTEST_CUSTOMER(ID);
+create index IDX_DF_CONTRACT_CUSTOMER on DF_CONTRACT (CUSTOMER_ID);

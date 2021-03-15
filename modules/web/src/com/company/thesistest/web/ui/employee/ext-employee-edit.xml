@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        class="com.company.thesistest.web.ui.employee.ExtEmployeeEditor"
+        extends="com/haulmont/thesis/web/ui/employee/employee-edit.xml"
+        messagesPack="com.company.thesistest.web.ui.employee">
+    <dsContext>
+        <datasource id="employeeDs"
+                    class="com.company.thesistest.entity.ExtEmployee"/>
+        <collectionDatasource id="signerCategoriesDs"
+                              class="com.company.thesistest.entity.Signers"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from thesistest$Signers e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <layout>
+        <tabSheet id="tabsheet">
+            <tab id="mainTab">
+                <scrollBox id="scrollBox60">
+                    <grid id="grid">
+                        <rows>
+                            <row>
+                                <label id="signerCategoryLabel"
+                                       value="msg://com.company.thesistest.entity/ExtEmployee.signerCategory"/>
+                                <lookupPickerField id="signerCategory"
+                                                   datasource="employeeDs"
+                                                   optionsDatasource="signerCategoriesDs"
+                                                   property="signerCategory"
+                                                   width="250px"/>
+                            </row>
+                        </rows>
+                    </grid>
+                </scrollBox>
+            </tab>
+        </tabSheet>
+    </layout>
+</window>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        class="com.company.thesistest.web.ui.simpledoc.ExtSimpleDocBrowser"
+        extends="com/haulmont/thesis/web/ui/simpledoc/simple-doc-browse.xml"
+        messagesPack="com.company.thesistest.web.ui.simpledoc">
+    <dsContext>
+        <groupDatasource id="cardsDs"
+                         class="com.company.thesistest.entity.ExtSimpleDoc"
+                         datasourceClass="com.haulmont.thesis.web.ui.DocDatasource"/>
+    </dsContext>
+    <layout>
+        <vbox>
+            <hbox>
+                <filter id="genericFilter"/>
+            </hbox>
+            <split id="split">
+                <vbox id="table-panel">
+                    <groupTable id="cardsTable"
+                                height="100%">
+                        <columns>
+                            <column id="docCard"/>
+                        </columns>
+                    </groupTable>
+                </vbox>
+            </split>
+        </vbox>
+    </layout>
+</window>

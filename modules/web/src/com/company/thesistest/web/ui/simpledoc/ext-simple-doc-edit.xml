@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        class="com.company.thesistest.web.ui.simpledoc.ExtSimpleDocEditor"
+        extends="com/haulmont/thesis/web/ui/simpledoc/simple-doc-edit.xml"
+        messagesPack="com.company.thesistest.web.ui.simpledoc">
+    <dsContext>
+        <datasource id="cardDs"
+                    class="com.company.thesistest.entity.ExtSimpleDoc"/>
+        <collectionDatasource id="docCardsDs"
+                              class="com.company.thesistest.entity.Categories"
+                              loadDynamicAttributes="true"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from thesistest$Categories e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <layout>
+        <split id="split">
+            <hbox id="mainPane">
+                <tabSheet id="tabsheet">
+                    <tab id="mainTab">
+                        <groupBox id="docInfoGroupBox">
+                            <scrollBox id="infoScrollBox">
+                                <vbox id="infoVBox">
+                                    <grid id="docInfo">
+                                        <rows>
+                                            <row>
+                                                <label id="docCardLabel"
+                                                       value="msg://com.company.thesistest.entity/ExtSimpleDoc.docCard"/>
+                                                <lookupField id="docCard"
+                                                             datasource="cardDs"
+                                                             optionsDatasource="docCardsDs"
+                                                             property="docCard"
+                                                             width="250px"/>
+                                            </row>
+                                        </rows>
+                                    </grid>
+                                    <vbox>
+                                        <scrollBox height="100px"/>
+                                    </vbox>
+                                </vbox>
+                            </scrollBox>
+                        </groupBox>
+                    </tab>
+                </tabSheet>
+            </hbox>
+        </split>
+    </layout>
+</window>

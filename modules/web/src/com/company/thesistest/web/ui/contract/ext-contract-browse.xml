@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        class="com.company.thesistest.web.ui.contract.ExtContractBrowser"
+        extends="com/haulmont/thesis/web/ui/contract/contract-browse.xml"
+        messagesPack="com.company.thesistest.web.ui.contract">
+    <dsContext>
+        <groupDatasource id="cardsDs"
+                         class="com.company.thesistest.entity.ExtContract"
+                         datasourceClass="com.haulmont.thesis.web.ui.DocDatasource"/>
+    </dsContext>
+    <layout>
+        <vbox>
+            <split id="split">
+                <vbox id="table-panel">
+                    <groupTable id="cardsTable">
+                        <columns>
+                            <column id="customer"/>
+                            <column id="order"/>
+                        </columns>
+                    </groupTable>
+                </vbox>
+            </split>
+        </vbox>
+    </layout>
+</window>

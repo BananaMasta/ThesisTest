@@ -72,13 +72,9 @@
     <view class="com.company.thesistest.entity.Signers"
           extends="_local"
           name="signers-browse">
-        <property name="name"
-                  view="_minimal"/>
     </view>
     <view class="com.company.thesistest.entity.Signers"
           extends="_local"
           name="signers-edit">
-        <property name="name"
-                  view="_minimal"/>
     </view>
 </views>

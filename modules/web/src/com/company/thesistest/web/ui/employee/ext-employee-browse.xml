@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        class="com.company.thesistest.web.ui.employee.ExtEmployeeBrowser"
+        extends="com/haulmont/thesis/web/ui/employee/employee-browse.xml"
+        messagesPack="com.company.thesistest.web.ui.employee">
+    <dsContext>
+        <groupDatasource id="employeesDs"
+                         class="com.company.thesistest.entity.ExtEmployee"
+                         datasourceClass="com.haulmont.thesis.web.ui.employee.EmployeeDatasource"/>
+        <collectionDatasource id="signerCategoriesDs"
+                              class="com.company.thesistest.entity.Signers"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from thesistest$Signers e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <layout>
+        <groupTable id="employeesTable">
+            <columns>
+                <column id="signerCategory"/>
+            </columns>
+        </groupTable>
+    </layout>
+</window>
