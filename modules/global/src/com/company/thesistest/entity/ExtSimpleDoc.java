@@ -3,21 +3,28 @@
  */
 package com.company.thesistest.entity;
 
+import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
+import com.haulmont.cuba.core.global.DeletePolicy;
 import com.haulmont.thesis.core.entity.SimpleDoc;
 import com.haulmont.cuba.core.global.AppBeans;
 import com.haulmont.cuba.core.global.Metadata;
 import com.haulmont.chile.core.model.MetaClass;
 import com.haulmont.thesis.core.entity.Doc;
 import com.haulmont.thesis.core.global.EntityCopyUtils;
+
 import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.InheritanceType;
 import javax.persistence.Inheritance;
+
 import com.haulmont.cuba.core.entity.annotation.Extends;
+
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import com.haulmont.thesis.core.entity.DocOfficeData;
 
 /**
  * @author student01
@@ -28,10 +35,26 @@ import javax.persistence.ManyToOne;
 @Entity(name = "thesistest$SimpleDoc")
 public class ExtSimpleDoc extends SimpleDoc {
     private static final long serialVersionUID = 113550376011235204L;
-    
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DOC_CARD_ID")
     protected Categories docCard;
+
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "NEW_SIGNED_BY_ID")
+    protected ExtEmployee newSignedBy;
+
+
+    public void setNewSignedBy(ExtEmployee newSignedBy) {
+        this.newSignedBy = newSignedBy;
+    }
+
+    public ExtEmployee getNewSignedBy() {
+        return newSignedBy;
+    }
+
 
     public void setDocCard(Categories docCard) {
         this.docCard = docCard;
@@ -40,7 +63,6 @@ public class ExtSimpleDoc extends SimpleDoc {
     public Categories getDocCard() {
         return docCard;
     }
-
 
     @Override
     public void copyFrom(Doc srcDoc, Set<com.haulmont.cuba.core.entity.Entity> toCommit, boolean copySignatures,

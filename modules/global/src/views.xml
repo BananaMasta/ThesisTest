@@ -42,13 +42,13 @@
         <property name="signerCategory"
                   view="_minimal"/>
     </view>
-    <view class="com.company.thesistest.entity.ExtEmployee"
-          extends="edit"
-          name="edit"
-          overwrite="true">
-        <property name="signerCategory"
-                  view="_minimal"/>
-    </view>
+    <!--    <view class="com.company.thesistest.entity.ExtEmployee"-->
+    <!--&lt;!&ndash;          extends="edit"&ndash;&gt;-->
+    <!--&lt;!&ndash;          name="edit1"&ndash;&gt;-->
+    <!--          overwrite="true">-->
+    <!--        <property name="signerCategory"-->
+    <!--                  view="_minimal"/>-->
+    <!--    </view>-->
     <view class="com.company.thesistest.entity.Categories"
           extends="_local"
           name="categories-browse"/>
@@ -61,6 +61,8 @@
           overwrite="true">
         <property name="docCard"
                   view="_local"/>
+        <property name="newSignedBy"
+                  view="_minimal"/>
     </view>
     <view class="com.company.thesistest.entity.ExtSimpleDoc"
           extends="edit"
@@ -68,6 +70,8 @@
           overwrite="true">
         <property name="docCard"
                   view="_local"/>
+        <property name="newSignedBy"
+                  view="_minimal"/>
     </view>
     <view class="com.company.thesistest.entity.Signers"
           extends="_local"

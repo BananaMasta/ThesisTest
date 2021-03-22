@@ -2,16 +2,30 @@
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
         class="com.company.thesistest.web.ui.simpledoc.ExtSimpleDocEditor"
         extends="com/haulmont/thesis/web/ui/simpledoc/simple-doc-edit.xml"
-        messagesPack="com.company.thesistest.web.ui.simpledoc">
+        messagesPack="com.company.thesistest.web.ui.simpledoc"
+        xmlns:ext="http://schemas.haulmont.com/cuba/window-ext.xsd">
     <dsContext>
         <datasource id="cardDs"
                     class="com.company.thesistest.entity.ExtSimpleDoc"/>
         <collectionDatasource id="docCardsDs"
                               class="com.company.thesistest.entity.Categories"
-                              loadDynamicAttributes="true"
-                              view="_minimal">
+                              view="_local">
             <query>
                 <![CDATA[select e from thesistest$Categories e]]>
+            </query>
+        </collectionDatasource>
+        <collectionDatasource id="newSignedByDs"
+                              class="com.company.thesistest.entity.ExtEmployee"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from df$Employee e where e.signerCategory is not null]]>
+            </query>
+        </collectionDatasource>
+        <collectionDatasource id="newSignedBiesDs"
+                              class="com.company.thesistest.entity.ExtEmployee"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from thesistest$Employee e]]>
             </query>
         </collectionDatasource>
     </dsContext>
@@ -25,7 +39,7 @@
                                 <vbox id="infoVBox">
                                     <grid id="docInfo">
                                         <rows>
-                                            <row>
+                                            <row ext:index="8">
                                                 <label id="docCardLabel"
                                                        value="msg://com.company.thesistest.entity/ExtSimpleDoc.docCard"/>
                                                 <lookupField id="docCard"
@@ -33,6 +47,15 @@
                                                              optionsDatasource="docCardsDs"
                                                              property="docCard"
                                                              width="250px"/>
+                                            </row>
+                                            <row>
+                                                <label id="newSignedbyLabel"
+                                                       value="msg://com.company.thesistest.entity/ExtSimpleDoc.newSignedBy"/>
+                                                <lookupPickerField id="newSignedBy"
+                                                                   datasource="cardDs"
+                                                                   optionsDatasource="newSignedByDs"
+                                                                   property="newSignedBy"
+                                                                   width="250px"/>
                                             </row>
                                         </rows>
                                     </grid>
@@ -42,6 +65,14 @@
                                 </vbox>
                             </scrollBox>
                         </groupBox>
+                    </tab>
+                    <tab id="versionsTab">
+                        <table id="versionsTable">
+                            <columns>
+                                <column id="newSignedBy"/>
+                                <column id="sign"/>
+                            </columns>
+                        </table>
                     </tab>
                 </tabSheet>
             </hbox>

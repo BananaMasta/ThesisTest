@@ -13,6 +13,7 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import com.haulmont.thesis.core.entity.Employee;
+import javax.persistence.OneToOne;
 
 /**
  * @author student01

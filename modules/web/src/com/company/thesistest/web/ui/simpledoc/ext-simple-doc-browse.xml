@@ -7,6 +7,13 @@
         <groupDatasource id="cardsDs"
                          class="com.company.thesistest.entity.ExtSimpleDoc"
                          datasourceClass="com.haulmont.thesis.web.ui.DocDatasource"/>
+        <collectionDatasource id="newSignedBiesDs"
+                              class="com.company.thesistest.entity.ExtEmployee"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from thesistest$Employee e]]>
+            </query>
+        </collectionDatasource>
     </dsContext>
     <layout>
         <vbox>
@@ -19,6 +26,7 @@
                                 height="100%">
                         <columns>
                             <column id="docCard"/>
+                            <column id="newSignedby"/>
                         </columns>
                     </groupTable>
                 </vbox>

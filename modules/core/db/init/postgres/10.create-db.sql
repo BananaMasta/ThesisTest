@@ -62,9 +62,6 @@ create table THESISTEST_CATEGORIES (
     primary key (ID)
 )^
 -- end THESISTEST_CATEGORIES
--- begin DF_SIMPLE_DOC
-alter table DF_SIMPLE_DOC add column DOC_CARD_ID uuid ^
--- end DF_SIMPLE_DOC
 --Modify Discriminator for df$SimpleDoc
 update WF_CARD set CARD_TYPE = 1110 where CARD_TYPE = 110^
 --Insert permissions for entity thesistest$Categories
@@ -88,7 +85,6 @@ create table THESISTEST_SIGNERS (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
-    NAME_ID uuid,
     EMPLOYEE varchar(255),
     --
     primary key (ID)
@@ -104,3 +100,8 @@ insert into SEC_PERMISSION (ID, CREATE_TS, CREATED_BY, VERSION, UPDATE_TS, UPDAT
 insert into SEC_PERMISSION (ID, CREATE_TS, CREATED_BY, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE, ROLE_ID) values (newid(),now(),'system',1,now(),null,null,null,20,'thesistest$Signers:create',1,(select ID from SEC_ROLE where NAME = 'ReferenceEditor'));
 insert into SEC_PERMISSION (ID, CREATE_TS, CREATED_BY, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE, ROLE_ID) values (newid(),now(),'system',1,now(),null,null,null,20,'thesistest$Signers:update',1,(select ID from SEC_ROLE where NAME = 'ReferenceEditor'));
 insert into SEC_PERMISSION (ID, CREATE_TS, CREATED_BY, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE, ROLE_ID) values (newid(),now(),'system',1,now(),null,null,null,20,'thesistest$Signers:delete',1,(select ID from SEC_ROLE where NAME = 'ReferenceEditor'));
+
+-- begin DF_SIMPLE_DOC
+alter table DF_SIMPLE_DOC add column DOC_CARD_ID uuid ^
+alter table DF_SIMPLE_DOC add column NEW_SIGNED_BY_ID uuid ^
+-- end DF_SIMPLE_DOC
